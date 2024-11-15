@@ -1,33 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:layout_marginTop="20dp">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:padding="10dp"
+        android:id="@+id/tytul"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:text="Domek w górach" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/obraz"
+        android:scaleType="fitXY" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#008080">
 
-    <include layout="@layout/content_main" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pszycisk_polub"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="0dp"
+            android:background="#008080"
+            android:textColor="@color/white"
+            android:text="POLUB" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pszycisk_usun"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="#008080"
+            android:textColor="@color/white"
+            android:text="USUŃ" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pszycisk_zapisz"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="0dp"
+            android:background="#008080"
+            android:textColor="@color/white"
+            android:text="ZAPISZ" />
+    </LinearLayout>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_gravity="end"
+        android:padding="7dp"
+        android:id="@+id/licz_polub"
+        android:textSize="16sp"
+        android:text="0 polubień" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#808080" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:padding="7dp"
+        android:id="@+id/opis"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:text="Opis" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="7dp"
+        android:id="@+id/opis_opis"
+        android:textSize="15sp"
+        android:textColor="#808080"
+        android:text="Odwiedź komfortowy domek w Sudetach, blisko do szlakó turystycznych" />
+
+</LinearLayout>
